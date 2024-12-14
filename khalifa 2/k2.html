@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 85%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+        .logo {
+            position: absolute;
+			
+            top: -15px;
+            left: 5px;
+            width: 250px; /* Adjust size as needed */
+            height: auto;
+        }
+        .search-container {
+            margin: 10px 0;
+        }
+        .search-container input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+        }
+        .search-container button {
+            padding: 10px;
+            background: #ffc300;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .item {
+            background: #ffffff;
+            border: 1px solid #dddddd;
+            margin: 10px 0;
+            padding: 10px;
+            width: calc(30% - 20px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .item button {
+            background: #35424a;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .cart-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="new logo.png" alt="Logo" class="logo"> <!-- Logo Image -->
+    <h1>منصه الاستباقية</h1>
+    <div class="search-container">
+        <input type="text" placeholder="ابحث عن منتج...">
+        <button type="button">بحث</button>
+    </div>
+    <a href="cart.html" class="cart-icon">
+        <i class="fas fa-shopping-cart" style="font-size: 24px; color: white;"></i>
+    </a>
+</header>
+
+<div class="container">
+    <div class="item">
+        <img src="WhatsApp Image 2024-12-11 at 11.13.52 (1).jpeg" alt="منشار ميكانيكي">
+        <h2>منشار ميكانيكي</h2>
+        <button onclick="addToCart('منشار ميكانيكي', 'WhatsApp Image 2024-12-11 at 11.13.52 (1).jpeg')">Add to Cart</button>
+    </div>
+    <div class="item">
+        <img src="WhatsApp Image 2024-12-11 at 11.13.52.jpeg" alt="منشار الصفائح الدائر">
+        <h2>منشار الصفائح الدائر</h2>
+        <button onclick="addToCart('منشار الصفائح الدائر', 'WhatsApp Image 2024-12-11 at 11.13.52.jpeg')">Add to Cart</button>
+    </div>
+    <div class="item">
+        <img src="WhatsApp Image 2024-12-11 at 11.13.53.jpeg" alt="مقص هايدروليكي">
+        <h2>مقص هايدروليكي</h2>
+        <button onclick="addToCart('مقص هايدروليكي', 'WhatsApp Image 2024-12-11 at 11.13.53.jpeg')">Add to Cart</button>
+    </div>
+    <div class="item">
+        <img src="WhatsApp Image 2024-12-11 at 11.13.54.jpeg" alt="خلاعه ثلاثيه">
+        <h2>خلاعه ثلاثيه</h2>
+        <button onclick="addToCart('خلاعه ثلاثيه', 'WhatsApp Image 2024-12-11 at 11.13.54.jpeg')">Add to Cart</button>
+    </div>
+    <div class="item">
+        <img src="WhatsApp Image 2024-12-11 at 11.13.55 (1).jpeg" alt="فاتحة الأبواب الهايدروليكية 100">
+        <h2>فاتحة الأبواب الهايدروليكية 100</h2>
+        <button onclick="addToCart('فاتحة الأبواب الهايدروليكية 100', 'WhatsApp Image 2024-12-11 at 11.13.55 (1).jpeg')">Add to Cart</button>
+    </div>
+    <div class="item">
+        <img src="WhatsApp Image 2024-12-11 at 11.13.55.jpeg" alt="طارد الدخان">
+        <h2>طارد الدخان</h2>
+        <button onclick="addToCart('طارد الدخان', 'WhatsApp Image 2024-12-11 at 11.13.55 (1).jpeg')">Add to Cart</button>
+    </div>
+    <div class="item">
+        <img src="WhatsApp Image 2024-12-11 at 11.13.56 (2).jpeg" alt="شفاط ارضي">
+        <h2>شفاط ارضي</h2>
+        <button onclick="addToCart('شفاط ارضي', 'WhatsApp Image 2024-12-11 at 11.13.56 (1).jpeg')">Add to Cart</button>
+    </div>
+    <div class="item">
+        <img src="WhatsApp Image 2024-12-11 at 11.13.56 (1).jpeg" alt="قاذف رغوه S400">
+        <h2>قاذف رغوه S400</h2>
+        <button onclick="addToCart('قاذف رغوه S400', 'WhatsApp Image 2024-12-11 at 11.13.56 (1).jpeg')">Add to Cart</button>
+    </div>
+    <div class="item">
+        <img src="WhatsApp Image 2024-12-11 at 11.13.56.jpeg" alt="2.5 inch خرطوم إطفاء">
+        <h2>2.5 inch خرطوم إطفاء</h2>
+        <button onclick="addToCart('2.5 inch خرطوم إطفاء', 'WhatsApp Image 2024-12-11 at 11.13.56.jpeg')">Add to Cart</button>
+    </div>
+    <div class="item">
+        <img src="WhatsApp Image 2024-12-11 at 11.13.57.jpeg" alt="فاتحة الأبواب">
+        <h2>فاتحة الأبواب</h2>
+        <button onclick="addToCart('فاتحة الأبواب', 'WhatsApp Image 2024-12-11 at 11.13.57.jpeg')">Add to Cart</button>
+    </div>
+</div>
+
+<script>
+    function addToCart(itemName, itemImage) {
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const existingItem = cartItems.find(item => item.name === itemName);
+        
+        if (existingItem) {
+            existingItem.quantity += 1; // Increase quantity if item exists
+        } else {
+            cartItems.push({ name: itemName, quantity: 1, image: itemImage }); // Add new item with image
+        }
+        
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        alert(itemName + ' has been added to your cart!');
+    }
+</script>
+
+</body>
+</html>
